@@ -12,6 +12,12 @@ export default {
     filename: "index.js",
   },
   plugins: [
+    // Generate an external css file with a hash in the filename
+    new MiniCssExtractPlugin({
+      filename: "[name].[chunkhash].css",
+    }),
+
+    // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
       template: "src/index.html",
     }),
