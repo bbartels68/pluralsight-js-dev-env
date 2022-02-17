@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://javascript-development-environment/./src/index.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB;;AAEA;EACE,YAAY;AACd","file":"main.5ab7374d06d4a768a7ae.css","sourcesContent":["body {\n  font-family: Sans-Serif;\n}\n\ntable th {\n  padding: 5px;\n}\n"],"sourceRoot":""}

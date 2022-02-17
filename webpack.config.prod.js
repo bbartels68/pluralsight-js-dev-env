@@ -3,15 +3,24 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
-  mode: "development",
-  devtool: "eval-source-map",
-  entry: "./src/index.js",
+  mode: "production",
+  devtool: "source-map",
+  entry: {
+    main: path.resolve(__dirname, "src/index"),
+    vendor: path.resolve(__dirname, "src/vendor"),
+  },
   output: {
-    path: path.resolve(__dirname, "src"),
+    path: path.resolve(__dirname, "build"),
     publicPath: "/",
-    filename: "index.js",
+    filename: "[name].[chunkhash].js",
   },
   plugins: [
+    // Generate an external css file with a hash in the filename
+    new MiniCssExtractPlugin({
+      filename: "[name].[chunkhash].css",
+    }),
+
+    // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
       template: "src/index.html",
     }),
