@@ -15,4 +15,4 @@
 /* eslint-disable no-unused-vars */
 // 3rd party frameworks
 
-import fetch from "whatwg-fetch";
+// import fetch from "whatwg-fetch";
